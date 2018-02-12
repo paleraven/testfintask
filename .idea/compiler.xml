@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="chapter_011" />
+        <module name="fin" />
+        <module name="testfintask (2) (ru.job4j)" />
+      </profile>
+      <profile name="Annotation profile for testfintask" enabled="true">
+        <sourceOutputDir name="testfintask/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="testfintask/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="testfintask (1) (testfintask)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="chapter_011" target="1.8" />
+      <module name="fin" target="1.8" />
+      <module name="testfintask" target="1.8" />
+      <module name="testfintask (1) (testfintask)" target="1.5" />
+      <module name="testfintask (2) (ru.job4j)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
