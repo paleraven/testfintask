@@ -1,0 +1,59 @@
+<hibernate-mapping>
+    <class name="ru.yalymar.mvc.model.models.Account" table="account">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+        <!-- model -->
+        <property name="id" column="BALANCE_ID" unique="true" not-null="true"/>
+        <property name="accountId" column="ACCOUNT_ID" not-null="true"/>
+        <property name="version" column="version" not-null="true"/>
+        <property name="status" column="status" not-null="true"/>
+        <property name="created" column="created"/>
+        <property name="period" column="period" not-null="true"/>
+        <property name="year" column="REPORT_YEAR" not-null="true"/>
+
+        <property name="row1110" column="row1110"/>
+        <property name="row1120" column="row1120"/>
+        <property name="row1130" column="row1130"/>
+        <property name="row1140" column="row1140"/>
+        <property name="row1150" column="row1150"/>
+        <property name="row1160" column="row1160"/>
+        <property name="row1170" column="row1170"/>
+        <property name="row1180" column="row1180"/>
+        <property name="row1190" column="row1190"/>
+        <property name="row1100" column="row1100"/>
+
+        <property name="row1210" column="row1210"/>
+        <property name="row1220" column="row1220"/>
+        <property name="row1230" column="row1230"/>
+        <property name="row1240" column="row1240"/>
+        <property name="row1250" column="row1250"/>
+        <property name="row1260" column="row1260"/>
+        <property name="row1200" column="row1200"/>
+
+        <property name="row1600" column="row1600"/>
+
+        <property name="row1310" column="row1310"/>
+        <property name="row1320" column="row1320"/>
+        <property name="row1340" column="row1340"/>
+        <property name="row1350" column="row1350"/>
+        <property name="row1360" column="row1360"/>
+        <property name="row1300" column="row1300"/>
+
+        <property name="row1410" column="row1410"/>
+        <property name="row1420" column="row1420"/>
+        <property name="row1430" column="row1430"/>
+        <property name="row1450" column="row1450"/>
+        <property name="row1400" column="row1400"/>
+
+        <property name="row1510" column="row1510"/>
+        <property name="row1520" column="row1520"/>
+        <property name="row1530" column="row1530"/>
+        <property name="row1540" column="row1540"/>
+        <property name="row1550" column="row1550"/>
+        <property name="row1500" column="row1500"/>
+
+        <property name="row1700" column="row1700"/>
+
+    </class>
+</hibernate-mapping>
