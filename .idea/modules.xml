@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fin/fin.iml" filepath="$PROJECT_DIR$/fin/fin.iml" />
       <module fileurl="file://$PROJECT_DIR$/testfintask.iml" filepath="$PROJECT_DIR$/testfintask.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testfintask (1) (testfintask).iml" filepath="$PROJECT_DIR$/testfintask (1) (testfintask).iml" />
+      <module fileurl="file://C:\testfintask\testfintask (1) (testfintask).iml" filepath="C:\testfintask\testfintask (1) (testfintask).iml" />
     </modules>
   </component>
 </project>

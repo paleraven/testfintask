@@ -1,0 +1,38 @@
+<hibernate-mapping>
+    <class name="ru.yalymar.mvc.model.models.Account" table="account">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+        <!-- model -->
+        <property name="id" column="REPORT_ID" unique="true" not-null="true"/>
+        <property name="accountId" column="ACCOUNT_ID" not-null="true"/>
+        <property name="version" column="version" not-null="true"/>
+        <property name="status" column="status" not-null="true"/>
+        <property name="created" column="created"/>
+        <property name="period" column="period" not-null="true"/>
+        <property name="year" column="REPORT_YEAR" not-null="true"/>
+
+        <property name="row2110" column="row2110"/>
+
+        <property name="row2120" column="row2120"/>
+
+        <property name="row2100" column="row2100"/>
+        <property name="row2210" column="row2210"/>
+        <property name="row2200" column="row2200"/>
+
+        <property name="row2310" column="row2310"/>
+        <property name="row2320" column="row2320"/>
+        <property name="row2330" column="row2330"/>
+        <property name="row2340" column="row2340"/>
+        <property name="row2350" column="row2350"/>
+        <property name="row2300" column="row2300"/>
+
+        <property name="row2410" column="row2410"/>
+        <property name="row2421" column="row2421"/>
+        <property name="row2430" column="row2430"/>
+        <property name="row2450" column="row2450"/>
+        <property name="row2460" column="row2460"/>
+        <property name="row2400" column="row2400"/>
+
+    </class>
+</hibernate-mapping>

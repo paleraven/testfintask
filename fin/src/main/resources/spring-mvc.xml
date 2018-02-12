@@ -41,6 +41,9 @@
                 <value>mapping/Role.hbm.xml</value>
                 <value>mapping/Transmission.hbm.xml</value>
                 <value>mapping/User.hbm.xml</value>
+                <value>mapping/Account.hbm.xml</value>
+                <value>mapping/Balance.hbm.xml</value>
+                <value>mapping/IncomeReport.hbm.xml</value>
             </list>
         </property>
 
