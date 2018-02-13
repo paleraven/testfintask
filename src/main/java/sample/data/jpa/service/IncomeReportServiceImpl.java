@@ -23,7 +23,7 @@ public class IncomeReportServiceImpl implements IncomeReportService {
     }
 
     @Override
-    public IncomeReport getIncomeReportByAccountId(Long id) {
+    public IncomeReport getIncomeReportById(Long id) {
         return incomeReportRepository.getIncomeReportByReportId(id);
     }
 }

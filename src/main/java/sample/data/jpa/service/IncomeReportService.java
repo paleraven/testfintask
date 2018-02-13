@@ -7,5 +7,5 @@ import java.util.List;
 public interface IncomeReportService {
     List<IncomeReport> getAllIncomeReports();
 
-    IncomeReport getIncomeReportByAccountId(Long id);
+    IncomeReport getIncomeReportById(Long id);
 }
