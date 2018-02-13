@@ -6,23 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="chapter_011" />
         <module name="fin" />
-        <module name="testfintask (2) (ru.job4j)" />
-      </profile>
-      <profile name="Annotation profile for testfintask" enabled="true">
-        <sourceOutputDir name="testfintask/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="testfintask/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="testfintask (1) (testfintask)" />
+        <module name="spring-boot-jdbc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="chapter_011" target="1.8" />
       <module name="fin" target="1.8" />
-      <module name="testfintask" target="1.8" />
-      <module name="testfintask (1) (testfintask)" target="1.5" />
-      <module name="testfintask (2) (ru.job4j)" target="1.8" />
+      <module name="spring-boot-jdbc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

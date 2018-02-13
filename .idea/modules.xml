@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fin/fin.iml" filepath="$PROJECT_DIR$/fin/fin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testfintask.iml" filepath="$PROJECT_DIR$/testfintask.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testfintask (1) (testfintask).iml" filepath="$PROJECT_DIR$/testfintask (1) (testfintask).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fin.iml" filepath="$PROJECT_DIR$/fin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-jdbc.iml" filepath="$PROJECT_DIR$/spring-boot-jdbc.iml" />
     </modules>
   </component>
 </project>
