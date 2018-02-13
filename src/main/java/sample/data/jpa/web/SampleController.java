@@ -21,19 +21,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import sample.data.jpa.service.CityService;
+import sample.data.jpa.service.AccountService;
 
 @Controller
 public class SampleController {
 
 	@Autowired
-	private CityService cityService;
+	private AccountService accountService;
 
 	@GetMapping("/")
 	@ResponseBody
 	@Transactional(readOnly = true)
 	public String helloWorld() {
-		return this.cityService.getCity("Bath", "UK").getName();
+		return this.accountService.getAccountByName("Alpha").getNameAccount();
 	}
 
 }
