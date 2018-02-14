@@ -10,8 +10,6 @@ import sample.data.jpa.service.AccountService;
 import sample.data.jpa.service.BalanceService;
 import sample.data.jpa.service.IncomeReportService;
 
-import java.util.Map;
-
 @Controller
 public class AccountController {
 
@@ -32,19 +30,15 @@ public class AccountController {
 
     @RequestMapping("/form")
     public String getForm(Model model) {
-        model.addAttribute("fields", Fields.asList());
+        model.addAttribute("fields", new Fields());
         return "form";
     }
 
     @PostMapping("/form")
-    public String calculate(Model model) {
-//        List<String> fields = Fields.asList();
-//        Map<String, BigDecimal> map = fields.stream().filter(Model::containsAttribute)
-//                .collect(Collectors.toMap((in,out) -> in), (in, out) -> {
-//                    model
-//                });
+    public String calculate(Fields fields) {
 
-        Map<String, Object> map = model.asMap();
+        // принимаем поля с формы
+
         System.out.println();
         // тут вызываем сервис и отправлям данные в бд
 

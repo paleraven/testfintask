@@ -1,36 +1,274 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        table, button {
+            width: 50%;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
 
-    <title>Form Page</title>
+        $(document).ready(function () {
+            $('input').focus(function () {
+                $(this).css("outline-color", "#FF0000");
+            });
+        });
 
+    </script>
 </head>
 <body>
+
 <div class="container">
 
     <h2>Form</h2>
     <div>
-        <form class="form-horizontal" th:action="@{/form}" method="post">
+        <form class="form-horizontal" th:object="${fields}" th:action="@{/form}" method="post">
             <table>
                 <tr>
                     <th>Code</th>
                     <th>Value</th>
                 </tr>
-                <tr th:each="field : ${fields}" id="">
-                    <td th:text="${field}"></td>
+
+                <!-- 1100 -->
+                <tr>
+                    <td>1110</td>
                     <td>
-                        <div>
-                            <label>
-                                <input type="text" id="${field}"/>
-                            </label>
-                        </div>
+                        <input type="text" class="form-control" th:field="*{row1110}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1120</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1120}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1130</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1130}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1140</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1140}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1150</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1150}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1160</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1160}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1170</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1170}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1180</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1180}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1190</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1190}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>1100</b></td>
+                    <td>
+                        <input type="text" style="outline: thin solid" th:field="*{row1100}"/>
+                    </td>
+                </tr>
+
+                <!-- 1200 -->
+                <tr>
+                    <td>1210</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1210}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1220</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1220}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1230</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1230}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1240</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1240}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1250</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1250}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1260</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1260}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>1200</b></td>
+                    <td>
+                        <input type="text" style="outline: thin solid" th:field="*{row1200}"/>
+                    </td>
+                </tr>
+
+                <!-- 1300 -->
+                <tr>
+                    <td>1310</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1310}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1320</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1320}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1330</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1330}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1340</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1340}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1350</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1350}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1360</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1360}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>1300</b></td>
+                    <td>
+                        <input type="text" style="outline: thin solid" th:field="*{row1300}"/>
+                    </td>
+                </tr>
+
+                <!-- 1400 -->
+                <tr>
+                    <td>1410</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1410}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1420</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1420}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1430</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1430}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1440</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1440}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1450</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1450}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>1400</b></td>
+                    <td>
+                        <input type="text" style="outline: thin solid" th:field="*{row1400}"/>
+                    </td>
+                </tr>
+
+                <!-- 1500 -->
+                <tr>
+                    <td>1510</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1510}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1520</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1520}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1530</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1530}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1540</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1540}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1550</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1550}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>1500</b></td>
+                    <td>
+                        <input type="text" style="outline: thin solid" th:field="*{row1500}"/>
+                    </td>
+                </tr>
+
+                <!-- 1600 -->
+                <tr>
+                    <td><b>1600</b></td>
+                    <td>
+                        <input type="text" style="outline: thin solid" th:field="*{row1600}"/>
                     </td>
                 </tr>
             </table>
 
 
-
-            <button type="submit" name="addRow">Send</button>
+            <button type="submit" name="send">Send</button>
         </form>
     </div>
 </div>
