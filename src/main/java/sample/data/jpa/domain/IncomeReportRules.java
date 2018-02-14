@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class IncomeReportRules {
 
-    String message = "Row in IncomeReport is null!";
+    private String message = "Row in IncomeReport is null!";
 
     public boolean ruleSumof2100(BigDecimal row2110, BigDecimal row2120, BigDecimal row2100) throws IncorrectDataException {
         if (row2110 == null || row2120 == null || row2100 == null)
