@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class BalanceRules {
 
-    String message = "Row in Balance is null!";
+    private String message = "Row in Balance is null!";
 
     public boolean ruleSumof1100(BigDecimal sumOfFixedAssetsBalance, BigDecimal row1100) throws IncorrectDataException {
         if (row1100 == null)

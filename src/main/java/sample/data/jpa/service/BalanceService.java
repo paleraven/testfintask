@@ -8,4 +8,8 @@ public interface BalanceService {
     List<Balance> getAllBalances();
 
     Balance getBalanceById(Long id);
+
+    Balance insert(Balance balance);
+
+    List<Balance> saveAll(List<Balance> balances);
 }

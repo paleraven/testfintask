@@ -26,4 +26,14 @@ public class IncomeReportServiceImpl implements IncomeReportService {
     public IncomeReport getIncomeReportById(Long id) {
         return incomeReportRepository.getIncomeReportByReportId(id);
     }
+
+    @Override
+    public IncomeReport insert(IncomeReport incomeReport) {
+        return incomeReportRepository.save(incomeReport);
+    }
+
+    @Override
+    public List<IncomeReport> saveAll(List<IncomeReport> incomeReports) {
+        return incomeReportRepository.save(incomeReports);
+    }
 }

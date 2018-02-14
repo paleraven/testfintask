@@ -8,4 +8,8 @@ public interface AccountService {
     List<Account> getAllAccounts();
 
     Account getAccountByName(String accountName);
+
+    Account insert(Account account);
+
+    List<Account> saveAll(List<Account> accounts);
 }
