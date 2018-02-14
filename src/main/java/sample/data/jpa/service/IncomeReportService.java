@@ -8,4 +8,8 @@ public interface IncomeReportService {
     List<IncomeReport> getAllIncomeReports();
 
     IncomeReport getIncomeReportById(Long id);
+
+    IncomeReport insert(IncomeReport incomeReport);
+
+    List<IncomeReport> saveAll(List<IncomeReport> incomeReports);
 }

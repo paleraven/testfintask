@@ -26,4 +26,14 @@ public class BalanceServiceImpl implements BalanceService {
     public Balance getBalanceById(Long id) {
         return balanceRepository.getBalanceByBalanceId(id);
     }
+
+    @Override
+    public Balance insert(Balance balance) {
+        return balanceRepository.save(balance);
+    }
+
+    @Override
+    public List<Balance> saveAll(List<Balance> balances) {
+        return balanceRepository.save(balances);
+    }
 }

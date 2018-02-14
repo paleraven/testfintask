@@ -16,7 +16,7 @@ public class IncomeReport {
     private Account account;
 
     @Column(nullable = false)
-    private Long version;
+    private int version;
 
     @Column(nullable = false)
     private String status;
@@ -105,11 +105,11 @@ public class IncomeReport {
         this.account= account;
     }
 
-    public Long getVersion() {
+    public int getVersion() {
         return version;
     }
 
-    public void setVersion(Long version) {
+    public void setVersion(int version) {
         this.version = version;
     }
 
