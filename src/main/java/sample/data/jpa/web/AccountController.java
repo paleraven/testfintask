@@ -3,12 +3,14 @@ package sample.data.jpa.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import sample.data.jpa.domain.Fields;
 import sample.data.jpa.service.AccountService;
 import sample.data.jpa.service.BalanceService;
 import sample.data.jpa.service.IncomeReportService;
+
+import java.util.Map;
 
 @Controller
 public class AccountController {
@@ -28,40 +30,25 @@ public class AccountController {
         this.incomeReportService = incomeReportService;
     }
 
-    @RequestMapping(value = "/form", method = RequestMethod.GET)
-    public String form(Model model) {
+    @RequestMapping("/form")
+    public String getForm(Model model) {
         model.addAttribute("fields", Fields.asList());
         return "form";
     }
 
-//    @RequestMapping("product/{id}")
-//    public String showProduct(@PathVariable Integer id, Model model){
-//        model.addAttribute("product", productService.getProductById(id));
-//        return "productshow";
-//    }
-//
-//    @RequestMapping("product/edit/{id}")
-//    public String edit(@PathVariable Integer id, Model model){
-//        model.addAttribute("product", productService.getProductById(id));
-//        return "productform";
-//    }
-//
-//    @RequestMapping("product/new")
-//    public String newProduct(Model model){
-//        model.addAttribute("product", new Product());
-//        return "productform";
-//    }
-//
-//    @RequestMapping(value = "product", method = RequestMethod.POST)
-//    public String saveProduct(Product product){
-//        productService.saveProduct(product);
-//        return "redirect:/product/" + product.getId();
-//    }
-//
-//    @RequestMapping("product/delete/{id}")
-//    public String delete(@PathVariable Integer id){
-//        productService.deleteProduct(id);
-//        return "redirect:/products";
-//    }
+    @PostMapping("/form")
+    public String calculate(Model model) {
+//        List<String> fields = Fields.asList();
+//        Map<String, BigDecimal> map = fields.stream().filter(Model::containsAttribute)
+//                .collect(Collectors.toMap((in,out) -> in), (in, out) -> {
+//                    model
+//                });
+
+        Map<String, Object> map = model.asMap();
+        System.out.println();
+        // тут вызываем сервис и отправлям данные в бд
+
+        return "redirect:/form";
+    }
 
 }
