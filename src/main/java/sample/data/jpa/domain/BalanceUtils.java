@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class BalanceUtils {
 
-    String message = "Row in Balance is null!";
+    private String message = "Row in Balance is null!";
 
     public BigDecimal sumOfFixedAssetsBalance_1100(BigDecimal row1110, BigDecimal row1120, BigDecimal row1130,
                                                    BigDecimal row1140, BigDecimal row1150, BigDecimal row1160,

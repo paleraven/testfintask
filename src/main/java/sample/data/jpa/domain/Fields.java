@@ -38,6 +38,9 @@ public enum Fields {
     ROW_1530("row1530"),
     ROW_1540("row1540"),
     ROW_1550("row1550"),
+
+    ROW_1100("row1100"),
+    ROW_1200("row1200"),
     ROW_1300("row1300"),
     ROW_1400("row1400"),
     ROW_1500("row1500");
