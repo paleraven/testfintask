@@ -115,6 +115,9 @@ public class Balance {
     @Column
     private BigDecimal row1360;
 
+    @Column
+    private BigDecimal row1370;
+
     /**
      * Sum of Capital and Reserves
      */
@@ -573,6 +576,14 @@ public class Balance {
 
     public void setRow1360(BigDecimal row1360) {
         this.row1360 = row1360;
+    }
+
+    public BigDecimal getRow1370() {
+        return row1370;
+    }
+
+    public void setRow1370(BigDecimal row1370) {
+        this.row1370 = row1370;
     }
 
     public BigDecimal getRow1300() {

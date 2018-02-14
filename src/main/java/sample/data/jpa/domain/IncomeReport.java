@@ -1,8 +1,7 @@
 package sample.data.jpa.domain;
 
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
+import javax.validation.constraints.AssertTrue;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -49,6 +48,9 @@ public class IncomeReport {
     /**
      * revenue from sales
      */
+
+    @Column
+    private BigDecimal row2220;
     @Column
     private BigDecimal row2200;
 
@@ -143,6 +145,58 @@ public class IncomeReport {
         this.year = year;
     }
 
+    /**
+     *
+     *
+     */
+
+    @AssertTrue
+    public boolean rule2110() {
+        return this.row2110.signum() > 0 || this.row2110 == null;
+    }
+
+    @AssertTrue
+    public boolean rule2120() {
+        return this.row2120.signum() > 0 || this.row2120 == null;
+    }
+
+    @AssertTrue
+    public boolean rule2210() {
+        return this.row2210.signum() > 0 || this.row2210 == null;
+    }
+
+    @AssertTrue
+    public boolean rule2220() {
+        return this.row2220.signum() > 0 || this.row2220 == null;
+    }
+
+    @AssertTrue
+    public boolean rule2310() {
+        return this.row2310.signum() > 0 || this.row2310 == null;
+    }
+
+    @AssertTrue
+    public boolean rule2320() {
+        return this.row2320.signum() > 0 || this.row2320 == null;
+    }
+    @AssertTrue
+    public boolean rule2330() {
+        return this.row2330.signum() > 0 || this.row2330 == null;
+    }
+    @AssertTrue
+    public boolean rule2340() {
+        return this.row2340.signum() > 0 || this.row2340 == null;
+    }
+    @AssertTrue
+    public boolean rule2350() {
+        return this.row2350.signum() > 0 || this.row2350 == null;
+    }
+
+    @AssertTrue
+    public boolean rule2410() {
+        return this.row2410.signum() > 0 || this.row2410 == null;
+    }
+
     public BigDecimal getRow2110() {
         return row2110;
     }
@@ -181,6 +235,14 @@ public class IncomeReport {
 
     public void setRow2200(BigDecimal row2200) {
         this.row2200 = row2200;
+    }
+
+    public BigDecimal getRow2220() {
+        return row2220;
+    }
+
+    public void setRow2220(BigDecimal row2220) {
+        this.row2220 = row2220;
     }
 
     public BigDecimal getRow2310() {
