@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="incomeReport">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="reportId" type="xs:integer"/>
+			<xs:element name="account" type="xs:integer"/>
+			<xs:element name="version" type="xs:integer"/>
+			<xs:element name="status" type="xs:string"/>
+			<xs:element name="created" type="xs:date"/>
+			<xs:element name="period" type="xs:integer"/>
+			<xs:element name="year" type="xs:string"/>
+			
+			<xs:element name="row2110" type="xs:decimal"/>
+			<xs:element name="row2120" type="xs:decimal"/>
+			<xs:element name="row2100" type="xs:decimal"/>
+			
+			<xs:element name="row2220" type="xs:decimal"/>
+			<xs:element name="row2200" type="xs:decimal"/>
+			
+			<xs:element name="row2310" type="xs:decimal"/>
+			<xs:element name="row2320" type="xs:decimal"/>
+			<xs:element name="row2330" type="xs:decimal"/>
+			<xs:element name="row2340" type="xs:decimal"/>
+			<xs:element name="row2350" type="xs:decimal"/>
+			<xs:element name="row2300" type="xs:decimal"/>
+			
+			<xs:element name="row2410" type="xs:decimal"/>
+			<xs:element name="row2421" type="xs:decimal"/>
+			<xs:element name="row2430" type="xs:decimal"/>
+			<xs:element name="row2450" type="xs:decimal"/>
+			<xs:element name="row2460" type="xs:decimal"/>
+			<xs:element name="row2400" type="xs:decimal"/>
+	    </xs:sequence>
+	</xs:complexType>
+</xs:element>
+</xs:schema>
