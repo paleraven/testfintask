@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xs:element name="balance">
+<xs:element name="Balance">
 	<xs:complexType>
 		<xs:sequence>
-			<xs:element name="balanceId" type="xs:integer"/>
-			<xs:element name="account" type="xs:integer"/>
+			<xs:element name="balanceId" type="xs:long"/>
+			<xs:element name="account" type="xs:integer" minOccurs="0" />
 			<xs:element name="version" type="xs:integer"/>
 			<xs:element name="status" type="xs:string"/>
-			<xs:element name="created" type="xs:date"/>
+			<!--<xs:element name="created" type="xs:date"/>-->
 			<xs:element name="period" type="xs:integer"/>
 			<xs:element name="year" type="xs:string"/>
 			
-			<xs:element name="row1110" type="xs:decimal"/>
-			<xs:element name="row1120" type="xs:decimal"/>
-			<xs:element name="row1130" type="xs:decimal"/>
-			<xs:element name="row1140" type="xs:decimal"/>
-			<xs:element name="row1150" type="xs:decimal"/>
-			<xs:element name="row1160" type="xs:decimal"/>
-			<xs:element name="row1170" type="xs:decimal"/>
-			<xs:element name="row1180" type="xs:decimal"/>
-			<xs:element name="row1190" type="xs:decimal"/>
-			<xs:element name="row1100" type="xs:decimal"/>
+			<xs:element name="row1110" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1120" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1130" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1140" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1150" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1160" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1170" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1180" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1190" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1100" type="xs:decimal" minOccurs="0"/>
 			
-			<xs:element name="row1210" type="xs:decimal"/>
-			<xs:element name="row1220" type="xs:decimal"/>
-			<xs:element name="row1230" type="xs:decimal"/>
-			<xs:element name="row1240" type="xs:decimal"/>
-			<xs:element name="row1250" type="xs:decimal"/>
-			<xs:element name="row1260" type="xs:decimal"/>
-			<xs:element name="row1200" type="xs:decimal"/>
+			<xs:element name="row1210" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1220" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1230" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1240" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1250" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1260" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1200" type="xs:decimal" minOccurs="0"/>
 			
-			<xs:element name="row1600" type="xs:decimal"/>
+			<xs:element name="row1600" type="xs:decimal" minOccurs="0"/>
 			
-			<xs:element name="row1310" type="xs:decimal"/>
-			<xs:element name="row1320" type="xs:decimal"/>
-			<xs:element name="row1340" type="xs:decimal"/>
-			<xs:element name="row1350" type="xs:decimal"/>
-			<xs:element name="row1360" type="xs:decimal"/>
-			<xs:element name="row1370" type="xs:decimal"/>
-			<xs:element name="row1300" type="xs:decimal"/>
+			<xs:element name="row1310" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1320" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1340" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1350" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1360" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1370" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1300" type="xs:decimal" minOccurs="0"/>
 			
-			<xs:element name="row1410" type="xs:decimal"/>
-			<xs:element name="row1420" type="xs:decimal"/>
-			<xs:element name="row1430" type="xs:decimal"/>
-			<xs:element name="row1450" type="xs:decimal"/>
-			<xs:element name="row1400" type="xs:decimal"/>
+			<xs:element name="row1410" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1420" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1430" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1450" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1400" type="xs:decimal" minOccurs="0"/>
 			
-			<xs:element name="row1510" type="xs:decimal"/>
-			<xs:element name="row1520" type="xs:decimal"/>
-			<xs:element name="row1530" type="xs:decimal"/>
-			<xs:element name="row1540" type="xs:decimal"/>
-			<xs:element name="row1550" type="xs:decimal"/>
-			<xs:element name="row1500" type="xs:decimal"/>
+			<xs:element name="row1510" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1520" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1530" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1540" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1550" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="row1500" type="xs:decimal" minOccurs="0"/>
 			
-			<xs:element name="row1700" type="xs:decimal"/>
+			<xs:element name="row1700" type="xs:decimal" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:element>
