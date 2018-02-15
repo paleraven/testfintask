@@ -31,12 +31,13 @@ public class AccountController {
 
     @RequestMapping("/balance")
     public String getBalance(Model model) {
-        model.addAttribute("fields", new Balance());
+        model.addAttribute("balance", new Balance());
+        model.addAttribute("accounts", this.accountService.getAllAccounts());
         return "balance";
     }
 
     @PostMapping("/balance")
-    public String receiveBalance(Balance fields) {
+    public String receiveBalance(Balance balance) {
 
         // принимаем поля с формы
 

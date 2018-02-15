@@ -16,6 +16,11 @@
         td {
             text-align: center;
         }
+        .selectBox {
+            width:50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
     <script type="text/javascript">
 
@@ -33,7 +38,29 @@
 
     <h2>Бухгалтерский баланс</h2>
     <div>
-        <form class="form-horizontal" th:object="${fields}" th:action="@{/balance}" method="post">
+        <form class="form-horizontal" th:object="${balance}" th:action="@{/balance}" method="post">
+
+            <div class="selectBox">
+                <div>Select Account</div>
+                <div>
+                    <select th:field="*{account.id}">
+                        <option th:each="account : ${accounts}"
+                                th:value="${account.id}"
+                                th:text="${account.nameAccount}"></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="selectBox">
+                <div>Select Status</div>
+                <div>
+                    <select th:field="*{status}">
+                        <option value="Processing">Processing</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+
             <table>
                 <tr>
                     <th>Параметр</th>
