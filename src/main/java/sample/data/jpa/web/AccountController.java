@@ -60,25 +60,36 @@ public class AccountController {
 
     @PostMapping("/balance")
     public String receiveBalance(Balance balance) {
-
-
         return "redirect:/balance";
     }
 
     @RequestMapping("/income_report")
     public String getIncomeReport(Model model) {
         model.addAttribute("fields", new IncomeReport());
+        model.addAttribute("accounts", this.accountService.getAllAccounts());
         return "income_report";
+    }
+
+    @PostMapping("/income_report/insert")
+    public String insertIncomeReport(IncomeReport incomeReport, Model model) {
+
+        Calendar calendar = Calendar.getInstance();
+
+        incomeReport.setCreated(calendar.getTime());
+        incomeReport.setYear(String.valueOf(calendar.get(Calendar.YEAR)));
+        incomeReport.setPeriod(LocalDate
+                .of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+                .get(IsoFields.QUARTER_OF_YEAR));
+        incomeReport.incrementVersion();
+
+        this.incomeReportService.insert(incomeReport);
+
+        model.addAttribute("newIncomeReport", incomeReport);
+        return "redirect:/income_report";
     }
 
     @PostMapping("/income_report")
     public String receiveIncomeReport(IncomeReport incomeReport) {
-
-        // принимаем поля с формы
-
-        System.out.println();
-        // тут вызываем сервис и отправлям данные в бд
-
         return "redirect:/income_report";
     }
 

@@ -293,4 +293,8 @@ public class IncomeReport {
     public void setRow2400(BigDecimal row2400) {
         this.row2400 = row2400;
     }
+
+    public void incrementVersion() {
+        this.version++;
+    }
 }
