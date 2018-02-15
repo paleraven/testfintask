@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 
 public class Utils {
 
+    private Utils() {
+
+    }
+
     public static BigDecimal notNull(BigDecimal row) {
         if (row == null)
             return BigDecimal.ZERO;
