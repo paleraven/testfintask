@@ -50,14 +50,23 @@
                 var field = tag.attr('id');
                 o1[field] = value;
 
-                $.ajax('/balance/calculate', {
-                    method: 'post',
+                $.ajax('/balance/calculate/row1100', {
+                    method: 'get',
                     data: {
-                        obj: o1
+                        row1110: o1.row1110,
+                        row1120: o1.row1120,
+                        row1130: o1.row1130,
+                        row1140: o1.row1140,
+                        row1150: o1.row1150,
+                        row1160: o1.row1160,
+                        row1170: o1.row1170,
+                        row1180: o1.row1180,
+                        row1190: o1.row1190
                     },
-                    complete: function () {
-
-
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        console.log(value);
+                        document.getElementById("row1100").innerHTML = value.row1100;
                     }
                 });
             });

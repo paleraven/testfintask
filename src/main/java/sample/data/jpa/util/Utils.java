@@ -9,9 +9,11 @@ public class Utils {
     }
 
     public static BigDecimal notNull(BigDecimal row) {
-        if (row == null)
+        if (row == null) {
             return BigDecimal.ZERO;
-        else return row;
-
+        }
+        else {
+            return row;
+        }
     }
 }

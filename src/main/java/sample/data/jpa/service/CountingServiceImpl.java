@@ -4,10 +4,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import sample.data.jpa.CustomException.IncorrectDataException;
 import sample.data.jpa.domain.Balance;
+import sample.data.jpa.util.Utils;
 
 import java.math.BigDecimal;
-
-import sample.data.jpa.util.Utils;
 
 @Component("countingService")
 @Transactional
@@ -18,43 +17,65 @@ public class CountingServiceImpl implements CountingService {
     private Balance balance;
 
     public void ruleSumof1100() {
-        BigDecimal result = Utils.notNull(balance.getRow1110()).add(Utils.notNull(balance.getRow1120())).add(Utils.notNull(balance.getRow1130())).add(Utils.notNull(balance.getRow1140()))
-                .add(Utils.notNull(balance.getRow1150())).add(Utils.notNull(balance.getRow1160())).add(Utils.notNull(balance.getRow1170())).add(Utils.notNull(balance.getRow1180()))
+        BigDecimal result = Utils.notNull(balance.getRow1110())
+                .add(Utils.notNull(balance.getRow1120()))
+                .add(Utils.notNull(balance.getRow1130()))
+                .add(Utils.notNull(balance.getRow1140()))
+                .add(Utils.notNull(balance.getRow1150()))
+                .add(Utils.notNull(balance.getRow1160()))
+                .add(Utils.notNull(balance.getRow1170()))
+                .add(Utils.notNull(balance.getRow1180()))
                 .add(Utils.notNull(balance.getRow1190()));
         balance.setRow1100(result);
     }
 
     public void ruleSumof1200() {
-        BigDecimal result = Utils.notNull(balance.getRow1210()).add(Utils.notNull(balance.getRow1220())).add(Utils.notNull(balance.getRow1230())).add(Utils.notNull(balance.getRow1240()))
-                .add(Utils.notNull(balance.getRow1250())).add(Utils.notNull(balance.getRow1260()));
+        BigDecimal result = Utils.notNull(balance.getRow1210())
+                .add(Utils.notNull(balance.getRow1220()))
+                .add(Utils.notNull(balance.getRow1230()))
+                .add(Utils.notNull(balance.getRow1240()))
+                .add(Utils.notNull(balance.getRow1250()))
+                .add(Utils.notNull(balance.getRow1260()));
         balance.setRow1200(result);
     }
 
     public void ruleSumof1300() {
-        BigDecimal result = Utils.notNull(balance.getRow1310()).subtract(Utils.notNull(balance.getRow1320())).add(Utils.notNull(balance.getRow1340()))
-                .add(Utils.notNull(balance.getRow1350())).add(Utils.notNull(balance.getRow1360())).add(Utils.notNull(balance.getRow1370()));
+        BigDecimal result = Utils.notNull(balance.getRow1310())
+                .subtract(Utils.notNull(balance.getRow1320()))
+                .add(Utils.notNull(balance.getRow1340()))
+                .add(Utils.notNull(balance.getRow1350()))
+                .add(Utils.notNull(balance.getRow1360()))
+                .add(Utils.notNull(balance.getRow1370()));
         balance.setRow1300(result);
     }
 
     public void ruleSumof1400() {
-        BigDecimal result = Utils.notNull(balance.getRow1410()).add(Utils.notNull(balance.getRow1420())).add(Utils.notNull(balance.getRow1430()))
+        BigDecimal result = Utils.notNull(balance.getRow1410())
+                .add(Utils.notNull(balance.getRow1420()))
+                .add(Utils.notNull(balance.getRow1430()))
                 .add(Utils.notNull(balance.getRow1450()));
         balance.setRow1400(result);
     }
 
     public void ruleSumof1500() {
-        BigDecimal result = Utils.notNull(balance.getRow1510()).add(Utils.notNull(balance.getRow1520())).add(Utils.notNull(balance.getRow1530())).add(Utils.notNull(balance.getRow1540()))
+        BigDecimal result = Utils.notNull(balance.getRow1510())
+                .add(Utils.notNull(balance.getRow1520()))
+                .add(Utils.notNull(balance.getRow1530()))
+                .add(Utils.notNull(balance.getRow1540()))
                 .add(Utils.notNull(balance.getRow1550()));
         balance.setRow1500(result);
     }
 
     public void ruleSumof1600() {
-        BigDecimal result = Utils.notNull(balance.getRow1100()).add(Utils.notNull(balance.getRow1200()));
+        BigDecimal result = Utils.notNull(balance.getRow1100())
+                .add(Utils.notNull(balance.getRow1200()));
         balance.setRow1600(result);
     }
 
     public void ruleSumof1700() {
-        BigDecimal result = Utils.notNull(balance.getRow1300()).add(Utils.notNull(balance.getRow1400())).add(Utils.notNull(balance.getRow1500()));
+        BigDecimal result = Utils.notNull(balance.getRow1300())
+                .add(Utils.notNull(balance.getRow1400()))
+                .add(Utils.notNull(balance.getRow1500()));
         balance.setRow1700(result);
     }
 

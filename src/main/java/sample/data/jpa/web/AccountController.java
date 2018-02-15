@@ -1,19 +1,22 @@
 package sample.data.jpa.web;
 
+import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import sample.data.jpa.domain.Balance;
 import sample.data.jpa.domain.IncomeReport;
-import sample.data.jpa.service.*;
+import sample.data.jpa.service.AccountService;
+import sample.data.jpa.service.BalanceService;
+import sample.data.jpa.service.CountingServiceImpl;
+import sample.data.jpa.service.IncomeReportService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.IsoFields;
 import java.util.Calendar;
+import java.util.Map;
 
 @Controller
 public class AccountController {
@@ -62,22 +65,31 @@ public class AccountController {
         return model;
     }
 
-    @PostMapping("/balance/calculate")
-    public Model sum1100(HttpServletRequest req, Model model) {
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1100")
+    public Map<String, ? extends Object> sum1100(@RequestParam String row1110,
+                                                 @RequestParam String row1120,
+                                                 @RequestParam String row1130,
+                                                 @RequestParam String row1140,
+                                                 @RequestParam String row1150,
+                                                 @RequestParam String row1160,
+                                                 @RequestParam String row1170,
+                                                 @RequestParam String row1180,
+                                                 @RequestParam String row1190) {
         Balance balance = new Balance();
-        balance.setRow1110((BigDecimal) req.getAttribute("row1110"));
-        balance.setRow1120((BigDecimal) req.getAttribute("row1120"));
-        balance.setRow1130((BigDecimal) req.getAttribute("row1130"));
-        balance.setRow1140((BigDecimal) req.getAttribute("row1140"));
-        balance.setRow1120((BigDecimal) req.getAttribute("row1120"));
-        balance.setRow1120((BigDecimal) req.getAttribute("row1120"));
-        balance.setRow1120((BigDecimal) req.getAttribute("row1120"));
-        balance.setRow1120((BigDecimal) req.getAttribute("row1120"));
-        balance.setRow1120((BigDecimal) req.getAttribute("row1120"));
+        balance.setRow1110(new BigDecimal(row1110));
+        balance.setRow1120(new BigDecimal(row1120));
+        balance.setRow1130(new BigDecimal(row1130));
+        balance.setRow1140(new BigDecimal(row1140));
+        balance.setRow1150(new BigDecimal(row1150));
+        balance.setRow1160(new BigDecimal(row1160));
+        balance.setRow1170(new BigDecimal(row1170));
+        balance.setRow1180(new BigDecimal(row1180));
+        balance.setRow1190(new BigDecimal(row1190));
         this.countingService.setBalance(balance).ruleSumof1100();
-        BigDecimal sum = balance.getRow1100();
-        model.addAttribute("row1100", sum);
-        return model;
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1100", String.valueOf(balance.getRow1100()));
+        return map;
     }
 
     @PostMapping("/balance")
