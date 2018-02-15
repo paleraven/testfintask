@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Form</title>
+    <title>Бухгалтерский баланс</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         table, button {
@@ -31,13 +31,59 @@
 
 <div class="container">
 
-    <h2>Form</h2>
+    <h2>Бухгалтерский баланс</h2>
     <div>
-        <form class="form-horizontal" th:object="${fields}" th:action="@{/form}" method="post">
+        <form class="form-horizontal" th:object="${fields}" th:action="@{/balance}" method="post">
             <table>
                 <tr>
-                    <th>Code</th>
-                    <th>Value</th>
+                    <th>Параметр</th>
+                    <th>Значение</th>
+                </tr>
+                <!-- id -->
+                <tr>
+                    <td>ID баланса</td>
+                    <td class="sum" th:field="*{balanceId}"/>
+                </tr>
+
+                <!-- account -->
+                <tr>
+                    <td>ID организации</td>
+                    <td class="sum" th:field="*{account.id}"/>
+                </tr>
+
+                <!-- created -->
+                <tr>
+                    <td>Дата создания</td>
+                    <td class="sum" th:field="*{created}"/>
+                </tr>
+
+                <!-- version -->
+                <tr>
+                    <td>Версия</td>
+                    <td class="sum" th:field="*{version}"/>
+                </tr>
+
+                <!-- status -->
+                <tr>
+                    <td>Статус</td>
+                    <td class="sum" th:field="*{status}"/>
+                </tr>
+
+                <!-- year -->
+                <tr>
+                    <td>Год</td>
+                    <td class="sum" th:field="*{year}"/>
+                </tr>
+
+                <!-- period -->
+                <tr>
+                    <td>Период</td>
+                    <td class="sum" th:field="*{period}"/>
+                </tr>
+
+                <tr>
+                    <th>Код</th>
+                    <th>Значение, тыс. руб.</th>
                 </tr>
 
                 <!-- 1100 -->
@@ -144,6 +190,13 @@
                     </td>
                 </tr>
 
+                <!-- 1600 -->
+                <tr>
+                    <td><b>1600</b></td>
+                    <td class="sum" th:field="*{row1600}">
+                    </td>
+                </tr>
+
                 <!-- 1300 -->
                 <tr>
                     <td>1310</td>
@@ -155,12 +208,6 @@
                     <td>1320</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1320}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1330</td>
-                    <td>
-                        <input type="text" class="form-control" th:field="*{row1330}"/>
                     </td>
                 </tr>
                 <tr>
@@ -179,6 +226,12 @@
                     <td>1360</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1360}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1370</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row1370}"/>
                     </td>
                 </tr>
                 <tr>
@@ -204,12 +257,6 @@
                     <td>1430</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1430}"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1440</td>
-                    <td>
-                        <input type="text" class="form-control" th:field="*{row1440}"/>
                     </td>
                 </tr>
                 <tr>
@@ -261,16 +308,16 @@
                     </td>
                 </tr>
 
-                <!-- 1600 -->
+                <!-- 1700 -->
                 <tr>
-                    <td><b>1600</b></td>
-                    <td class="sum" th:field="*{row1600}">
+                    <td><b>1700</b></td>
+                    <td class="sum" th:field="*{row1700}">
                     </td>
                 </tr>
             </table>
 
 
-            <button type="submit" name="send">Send</button>
+            <button type="submit" name="send">Отправить</button>
         </form>
     </div>
 </div>

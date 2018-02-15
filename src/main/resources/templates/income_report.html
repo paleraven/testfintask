@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Отчет о прибылях и убытках</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        table, button {
+            width: 50%;
+            text-align: center;
+        }
+        .sum {
+            width: 25%;
+            text-align: center;
+            border: 1px solid black;
+        }
+        td {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('input').focus(function () {
+                $(this).css("outline-color", "#FF0000");
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Отчет о прибылях и убытках</h2>
+    <div>
+        <form class="form-horizontal" th:object="${fields}" th:action="@{/income_report}" method="post">
+            <table>
+                <tr>
+                    <th>Параметр</th>
+                    <th>Значение</th>
+                </tr>
+                <!-- id -->
+                <tr>
+                    <td>ID баланса</td>
+                    <td class="sum" th:field="*{reportId}"/>
+                </tr>
+
+                <!-- account -->
+                <tr>
+                    <td>ID организации</td>
+                    <td class="sum" th:field="*{account.id}"/>
+                </tr>
+
+                <!-- created -->
+                <tr>
+                    <td>Дата создания</td>
+                    <td class="sum" th:field="*{created}"/>
+                </tr>
+
+                <!-- version -->
+                <tr>
+                    <td>Версия</td>
+                    <td class="sum" th:field="*{version}"/>
+                </tr>
+
+                <!-- status -->
+                <tr>
+                    <td>Статус</td>
+                    <td class="sum" th:field="*{status}"/>
+                </tr>
+
+                <!-- year -->
+                <tr>
+                    <td>Год</td>
+                    <td class="sum" th:field="*{year}"/>
+                </tr>
+
+                <!-- period -->
+                <tr>
+                    <td>Период</td>
+                    <td class="sum" th:field="*{period}"/>
+                </tr>
+
+                <tr>
+                    <th>Код</th>
+                    <th>Значение, тыс. руб.</th>
+                </tr>
+
+                <!-- 2100 -->
+                <tr>
+                    <td>2110</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2110}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2120</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2120}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>2100</b></td>
+                    <td class="sum" th:field="*{row2100}">
+                    </td>
+                </tr>
+
+                <!-- 2200 -->
+                <tr>
+                    <td>2210</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2210}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2220</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2220}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>2200</b></td>
+                    <td class="sum" th:field="*{row2200}">
+                    </td>
+                </tr>
+
+                <!-- 2300 -->
+                <tr>
+                    <td>2310</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2310}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2320</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2320}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2330</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2330}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2340</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2340}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2350</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2350}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>2300</b></td>
+                    <td class="sum" th:field="*{row2300}">
+                    </td>
+                </tr>
+
+                <!-- 2400 -->
+                <tr>
+                    <td>2410</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2410}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2421</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2421}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2430</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2430}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2450</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2450}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2460</td>
+                    <td>
+                        <input type="text" class="form-control" th:field="*{row2460}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>2400</b></td>
+                    <td class="sum" th:field="*{row2400}">
+                    </td>
+                </tr>
+
+            </table>
+
+
+            <button type="submit" name="send">Отправить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

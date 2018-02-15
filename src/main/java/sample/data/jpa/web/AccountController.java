@@ -5,7 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import sample.data.jpa.domain.Fields;
+import sample.data.jpa.domain.Balance;
+import sample.data.jpa.domain.IncomeReport;
 import sample.data.jpa.service.AccountService;
 import sample.data.jpa.service.BalanceService;
 import sample.data.jpa.service.IncomeReportService;
@@ -28,21 +29,38 @@ public class AccountController {
         this.incomeReportService = incomeReportService;
     }
 
-    @RequestMapping("/form")
-    public String getForm(Model model) {
-        model.addAttribute("fields", new Fields());
-        return "form";
+    @RequestMapping("/balance")
+    public String getBalance(Model model) {
+        model.addAttribute("fields", new Balance());
+        return "balance";
     }
 
-    @PostMapping("/form")
-    public String calculate(Fields fields) {
+    @PostMapping("/balance")
+    public String receiveBalance(Balance fields) {
 
         // принимаем поля с формы
 
         System.out.println();
         // тут вызываем сервис и отправлям данные в бд
 
-        return "redirect:/form";
+        return "redirect:/balance";
+    }
+
+    @RequestMapping("/income_report")
+    public String getIncomeReport(Model model) {
+        model.addAttribute("fields", new IncomeReport());
+        return "income_report";
+    }
+
+    @PostMapping("/income_report")
+    public String receiveIncomeReport(IncomeReport fields) {
+
+        // принимаем поля с формы
+
+        System.out.println();
+        // тут вызываем сервис и отправлям данные в бд
+
+        return "redirect:/income_report";
     }
 
 }

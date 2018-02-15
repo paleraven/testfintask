@@ -8,6 +8,6 @@ public class IndexController {
 
     @RequestMapping(value = {"/", "/index"})
     String index(){
-        return "redirect:/form";
+        return "redirect:/balance";
     }
 }
