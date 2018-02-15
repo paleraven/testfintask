@@ -14,7 +14,12 @@
             border: 1px solid black;
         }
         td {
-            text-align: center;
+            text-align: left;
+            white-space: nowrap;
+        }
+        th {
+            text-align: left;
+            white-space: nowrap;
         }
         .selectBox {
             width:50%;
@@ -110,11 +115,12 @@
 
                 <tr>
                     <th>Код строки</th>
-                    <th>Наименование показателя</th>
                     <th>Значение, тыс. руб.</th>
+                    <th>Наименование показателя</th>
                 </tr>
 
                 <tr>
+                    <td/>
                     <td/>
                     <td><b>I.ВНЕОБОРОТНЫЕ  АКТИВЫ</b></td>
                 </tr>
@@ -122,75 +128,76 @@
                 <!-- 1100 -->
                 <tr>
                     <td>1110</td>
-                    <td>Нематериальные активы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1110}"/>
                     </td>
+                    <td>Нематериальные активы</td>
                 </tr>
                 <tr>
                     <td>1120</td>
-                    <td>Результаты исследований и разработок</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1120}"/>
                     </td>
+                    <td>Результаты исследований и разработок</td>
                 </tr>
                 <tr>
                     <td>1130</td>
-                    <td>Нематериальные поисковые активы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1130}"/>
                     </td>
+                    <td>Нематериальные поисковые активы</td>
                 </tr>
                 <tr>
                     <td>1140</td>
-                    <td>Материальные поисковые активы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1140}"/>
                     </td>
+                    <td>Материальные поисковые активы</td>
                 </tr>
                 <tr>
                     <td>1150</td>
-                    <td>Основные средства </td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1150}"/>
                     </td>
+                    <td>Основные средства </td>
                 </tr>
                 <tr>
                     <td>1160</td>
-                    <td>Доходные вложения в материальные ценности</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1160}"/>
                     </td>
+                    <td>Доходные вложения в материальные ценности</td>
                 </tr>
                 <tr>
                     <td>1170</td>
-                    <td>Финансовые вложения</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1170}"/>
                     </td>
+                    <td>Финансовые вложения</td>
                 </tr>
                 <tr>
                     <td>1180</td>
-                    <td>Отложенные налоговые активы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1180}"/>
                     </td>
+                    <td>Отложенные налоговые активы</td>
                 </tr>
                 <tr>
                     <td>1190</td>
-                    <td>Прочие внеоборотные активы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1190}"/>
                     </td>
+                    <td>Прочие внеоборотные активы</td>
                 </tr>
                 <tr>
                     <td><b>1100</b></td>
-                    <td><b>Итого по разделу I</b></td>
                     <td class="sum" th:field="*{row1100}">
                     </td>
+                    <td><b>Итого по разделу I</b></td>
                 </tr>
 
                 <tr>
+                    <td/>
                     <td/>
                     <td><b>II. ОБОРОТНЫЕ АКТИВЫ</b></td>
                 </tr>
@@ -198,62 +205,63 @@
                 <!-- 1200 -->
                 <tr>
                     <td>1210</td>
-                    <td>Запасы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1210}"/>
                     </td>
+                    <td>Запасы</td>
                 </tr>
                 <tr>
                     <td>1220</td>
-                    <td>Налог на добавленную стоимость по приобретенным ценностям</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1220}"/>
                     </td>
+                    <td>Налог на добавленную стоимость по приобретенным ценностям</td>
                 </tr>
                 <tr>
                     <td>1230</td>
-                    <td>Дебиторская задолженность</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1230}"/>
                     </td>
+                    <td>Дебиторская задолженность</td>
                 </tr>
                 <tr>
                     <td>1240</td>
-                    <td>Финансовые вложения</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1240}"/>
                     </td>
+                    <td>Финансовые вложения</td>
                 </tr>
                 <tr>
                     <td>1250</td>
-                    <td>Денежные средства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1250}"/>
                     </td>
+                    <td>Денежные средства</td>
                 </tr>
                 <tr>
                     <td>1260</td>
-                    <td>Прочие оборотные активы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1260}"/>
                     </td>
+                    <td>Прочие оборотные активы</td>
                 </tr>
                 <tr>
                     <td><b>1200</b></td>
-                    <td><b>Итого по разделу II</b></td>
                     <td class="sum" th:field="*{row1200}">
                     </td>
+                    <td><b>Итого по разделу II</b></td>
                 </tr>
 
                 <!-- 1600 -->
                 <tr>
                     <td><b>1600</b></td>
-                    <td><b>БАЛАНС (сумма строк 1100+1200)</b></td>
                     <td class="sum" th:field="*{row1600}">
                     </td>
+                    <td><b>БАЛАНС (сумма строк 1100+1200)</b></td>
                 </tr>
 
                 <tr>
+                    <td/>
                     <td/>
                     <td><b>III. КАПИТАЛ И РЕЗЕРВЫ</b></td>
                 </tr>
@@ -261,54 +269,55 @@
                 <!-- 1300 -->
                 <tr>
                     <td>1310</td>
-                    <td>Уставный капитал (складочный капитал, уставный фонд, вклады товарищей)</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1310}"/>
                     </td>
+                    <td>Уставный капитал (складочный капитал, уставный фонд, вклады товарищей)</td>
                 </tr>
                 <tr>
                     <td>1320</td>
-                    <td>Собственные акции, выкупленные у акционеров</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1320}"/>
                     </td>
+                    <td>Собственные акции, выкупленные у акционеров</td>
                 </tr>
                 <tr>
                     <td>1340</td>
-                    <td>Переоценка внеоборотных активов</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1340}"/>
                     </td>
+                    <td>Переоценка внеоборотных активов</td>
                 </tr>
                 <tr>
                     <td>1350</td>
-                    <td>Добавочный капитал (без переоценки)</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1350}"/>
                     </td>
+                    <td>Добавочный капитал (без переоценки)</td>
                 </tr>
                 <tr>
                     <td>1360</td>
-                    <td>Резервный капитал</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1360}"/>
                     </td>
+                    <td>Резервный капитал</td>
                 </tr>
                 <tr>
                     <td>1370</td>
-                    <td>Нераспределенная прибыль (непокрытый убыток)</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1370}"/>
                     </td>
+                    <td>Нераспределенная прибыль (непокрытый убыток)</td>
                 </tr>
                 <tr>
                     <td><b>1300</b></td>
-                    <td><b>Итого по разделу III</b></td>
                     <td class="sum" th:field="*{row1300}">
                     </td>
+                    <td><b>Итого по разделу III</b></td>
                 </tr>
 
                 <tr>
+                    <td/>
                     <td/>
                     <td><b>IV. ДОЛГОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</b></td>
                 </tr>
@@ -316,40 +325,41 @@
                 <!-- 1400 -->
                 <tr>
                     <td>1410</td>
-                    <td>Заемные средства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1410}"/>
                     </td>
+                    <td>Заемные средства</td>
                 </tr>
                 <tr>
                     <td>1420</td>
-                    <td>Отложенные налоговые обязательства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1420}"/>
                     </td>
+                    <td>Отложенные налоговые обязательства</td>
                 </tr>
                 <tr>
                     <td>1430</td>
-                    <td>Резервы под условные обязательства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1430}"/>
                     </td>
+                    <td>Резервы под условные обязательства</td>
                 </tr>
                 <tr>
                     <td>1450</td>
-                    <td>Прочие обязательства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1450}"/>
                     </td>
+                    <td>Прочие обязательства</td>
                 </tr>
                 <tr>
                     <td><b>1400</b></td>
-                    <td><b>Итого по разделу IV</b></td>
                     <td class="sum" th:field="*{row1400}">
                     </td>
+                    <td><b>Итого по разделу IV</b></td>
                 </tr>
 
                 <tr>
+                    <td/>
                     <td/>
                     <td><b>V. КРАТКОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА</b></td>
                 </tr>
@@ -357,57 +367,57 @@
                 <!-- 1500 -->
                 <tr>
                     <td>1510</td>
-                    <td>Заемные средства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1510}"/>
                     </td>
+                    <td>Заемные средства</td>
                 </tr>
                 <tr>
                     <td>1520</td>
-                    <td>Кредиторская задолженность</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1520}"/>
                     </td>
+                    <td>Кредиторская задолженность</td>
                 </tr>
                 <tr>
                     <td>1530</td>
-                    <td>Доходы будущих периодов</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1530}"/>
                     </td>
+                    <td>Доходы будущих периодов</td>
                 </tr>
                 <tr>
                     <td>1540</td>
-                    <td>Резервы предстоящих расходов</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1540}"/>
                     </td>
+                    <td>Резервы предстоящих расходов</td>
                 </tr>
                 <tr>
                     <td>1550</td>
-                    <td>Прочие обязательства</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row1550}"/>
                     </td>
+                    <td>Прочие обязательства</td>
                 </tr>
                 <tr>
                     <td><b>1500</b></td>
-                    <td><b>Итого по разделу V</b></td>
                     <td class="sum" th:field="*{row1500}">
                     </td>
+                    <td><b>Итого по разделу V</b></td>
                 </tr>
 
                 <!-- 1700 -->
                 <tr>
                     <td><b>1700</b></td>
-                    <td nowrap=""><b>БАЛАНС (сумма строк 1300+1400+1500)</b></td>
                     <td class="sum" th:field="*{row1700}">
                     </td>
+                    <td><b>БАЛАНС (сумма строк 1300+1400+1500)</b></td>
                 </tr>
             </table>
 
 
-            <button type="submit" name="send">Отправить</button>
+            <button type="submit" name="send">Сохранить в базу данных</button>
         </form>
     </div>
 </div>
