@@ -1,5 +1,7 @@
 package sample.data.jpa.service;
 
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import sample.data.jpa.CustomException.IncorrectDataException;
 import sample.data.jpa.domain.Balance;
 
@@ -7,15 +9,13 @@ import java.math.BigDecimal;
 
 import sample.data.jpa.util.Utils;
 
+@Component("countingService")
+@Transactional
 public class CountingServiceImpl implements CountingService {
 
     private String message = "Data inconsistency";
 
     private Balance balance;
-
-    public CountingServiceImpl(Balance balance) {
-        this.balance = balance;
-    }
 
     public void ruleSumof1100() {
         BigDecimal result = Utils.notNull(balance.getRow1110()).add(Utils.notNull(balance.getRow1120())).add(Utils.notNull(balance.getRow1130())).add(Utils.notNull(balance.getRow1140()))
@@ -111,4 +111,12 @@ public class CountingServiceImpl implements CountingService {
 
     }
 
+    public Balance getBalance() {
+        return balance;
+    }
+
+    public CountingServiceImpl setBalance(Balance balance) {
+        this.balance = balance;
+        return this;
+    }
 }
