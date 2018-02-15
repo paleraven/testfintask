@@ -1,8 +1,8 @@
 --Организации
-insert into account(id, name_account, created) values (1, 'Alpha', TO_DATE('2017-01-01', 'yyyy-mm-dd'));
-insert into account(id, name_account, created) values (2, 'Beta', TO_DATE('2017-01-02', 'yyyy-mm-dd'));
-insert into account(id, name_account, created) values (3, 'Delta', TO_DATE('2017-01-03', 'yyyy-mm-dd'));
-insert into account(id, name_account, created) values (4, 'Epsilon', TO_DATE('2017-01-04', 'yyyy-mm-dd'));
+insert into account(id, name_account, created) values (1, 'Ромашка', TO_DATE('2017-01-01', 'yyyy-mm-dd'));
+insert into account(id, name_account, created) values (2, 'Вектор', TO_DATE('2017-01-02', 'yyyy-mm-dd'));
+insert into account(id, name_account, created) values (3, 'Рога и Копыта', TO_DATE('2017-01-03', 'yyyy-mm-dd'));
+insert into account(id, name_account, created) values (4, 'Сбербанк', TO_DATE('2017-01-04', 'yyyy-mm-dd'));
 -------------------------------------------------------------------------
 --Отчеты о прибылях и убытках
 insert into income_report(report_id, account_id, version, status, created, period, year, row2110) values (10, 1, 1, 'Processing', TO_DATE('2017-04-01', 'yyyy-mm-dd'), 1, '2017', 3);
