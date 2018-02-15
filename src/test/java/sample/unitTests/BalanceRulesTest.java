@@ -87,7 +87,7 @@ public class BalanceRulesTest {
         balance.setRow1600(new BigDecimal(14));
         balance.setRow1700(new BigDecimal(12));
         try {
-            countingService.ruleSumof1600_1700();
+            countingService.ruleSumof1600or1700();
         } catch (IncorrectDataException e) {
             e.printStackTrace();
         }
