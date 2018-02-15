@@ -14,7 +14,12 @@
             border: 1px solid black;
         }
         td {
-            text-align: center;
+            text-align: left;
+            white-space: nowrap;
+        }
+        th {
+            text-align: left;
+            white-space: nowrap;
         }
     </style>
     <script type="text/javascript">
@@ -93,144 +98,143 @@
 
                 <tr>
                     <th>Код строки</th>
-                    <th>Наименование показателя</th>
                     <th>Значение, тыс. руб.</th>
+                    <th>Наименование показателя</th>
                 </tr>
 
                 <!-- 2100 -->
                 <tr>
                     <td>2110</td>
-                    <td>Выручка</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2110}"/>
                     </td>
+                    <td>Выручка</td>
                 </tr>
                 <tr>
                     <td>2120</td>
-                    <td>Себестоимость продаж</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2120}"/>
                     </td>
+                    <td>Себестоимость продаж</td>
                 </tr>
                 <tr>
                     <td><b>2100</b></td>
-                    <td><b>Валовая прибыль (убыток)</b></td>
                     <td class="sum" th:field="*{row2100}">
                     </td>
+                    <td><b>Валовая прибыль (убыток)</b></td>
                 </tr>
 
                 <!-- 2200 -->
                 <tr>
                     <td>2210</td>
-                    <td>Коммерческие расходы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2210}"/>
                     </td>
+                    <td>Коммерческие расходы</td>
                 </tr>
                 <tr>
                     <td>2220</td>
-                    <td>Управленческие расходы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2220}"/>
                     </td>
+                    <td>Управленческие расходы</td>
                 </tr>
                 <tr>
                     <td><b>2200</b></td>
-                    <td><b>Прибыль (убыток) от продаж</b></td>
                     <td class="sum" th:field="*{row2200}">
                     </td>
+                    <td><b>Прибыль (убыток) от продаж</b></td>
                 </tr>
 
                 <!-- 2300 -->
                 <tr>
                     <td>2310</td>
-                    <td> - Доходы от участия в других организациях</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2310}"/>
                     </td>
+                    <td> - Доходы от участия в других организациях</td>
                 </tr>
                 <tr>
                     <td>2320</td>
-                    <td> - Проценты к получению</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2320}"/>
                     </td>
+                    <td> - Проценты к получению</td>
                 </tr>
                 <tr>
                     <td>2330</td>
-                    <td> - Проценты к уплате</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2330}"/>
                     </td>
+                    <td> - Проценты к уплате</td>
                 </tr>
                 <tr>
                     <td>2340</td>
-                    <td> - Прочие  доходы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2340}"/>
                     </td>
+                    <td> - Прочие  доходы</td>
                 </tr>
                 <tr>
                     <td>2350</td>
-                    <td> - Прочие  расходы</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2350}"/>
                     </td>
+                    <td> - Прочие  расходы</td>
                 </tr>
                 <tr>
                     <td><b>2300</b></td>
-                    <td><b>Прибыль (убыток) до налогообложения</b></td>
                     <td class="sum" th:field="*{row2300}">
                     </td>
+                    <td><b>Прибыль (убыток) до налогообложения</b></td>
                 </tr>
 
                 <!-- 2400 -->
                 <tr>
                     <td>2410</td>
-                    <td>Текущий налог на прибыль</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2410}"/>
                     </td>
+                    <td>Текущий налог на прибыль</td>
                 </tr>
                 <tr>
                     <td>2421</td>
-                    <td>в т.ч. постоянные налоговые обязательства (активы)</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2421}"/>
                     </td>
+                    <td>в т.ч. постоянные налоговые обязательства (активы)</td>
                 </tr>
                 <tr>
                     <td>2430</td>
-                    <td>Изменение отложенных налоговых обязательств</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2430}"/>
                     </td>
+                    <td>Изменение отложенных налоговых обязательств</td>
                 </tr>
                 <tr>
                     <td>2450</td>
-                    <td>Изменение отложенных налоговых активов</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2450}"/>
                     </td>
+                    <td>Изменение отложенных налоговых активов</td>
                 </tr>
                 <tr>
                     <td>2460</td>
-                    <td>Прочие</td>
                     <td>
                         <input type="text" class="form-control" th:field="*{row2460}"/>
                     </td>
+                    <td>Прочие</td>
                 </tr>
                 <tr>
                     <td><b>2400</b></td>
-                    <td nowrap=""><b>Чистая прибыль  (убыток) отчетного года</b></td>
                     <td class="sum" th:field="*{row2400}">
                     </td>
+                    <td><b>Чистая прибыль  (убыток) отчетного года</b></td>
                 </tr>
 
             </table>
 
-
-            <button type="submit" name="send">Отправить</button>
+            <button type="submit" name="send">Сохранить в базу данных</button>
         </form>
     </div>
 </div>
