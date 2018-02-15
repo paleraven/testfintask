@@ -7,10 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import sample.data.jpa.domain.Balance;
 import sample.data.jpa.domain.IncomeReport;
-import sample.data.jpa.service.AccountService;
-import sample.data.jpa.service.BalanceService;
-import sample.data.jpa.service.CountingServiceImpl;
-import sample.data.jpa.service.IncomeReportService;
+import sample.data.jpa.service.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -90,6 +87,24 @@ public class AccountController {
         Map<String, String> map = Maps.newHashMap();
         map.put("row1100", String.valueOf(balance.getRow1100()));
         return map;
+    }
+
+    @PostMapping("/balance/to_xml")
+    public String balanceToXml(Balance balance, Model model) {
+
+        Calendar calendar = Calendar.getInstance();
+
+        balance.setCreated(calendar.getTime());
+        balance.setYear(String.valueOf(calendar.get(Calendar.YEAR)));
+        balance.setPeriod(LocalDate
+                .of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+                .get(IsoFields.QUARTER_OF_YEAR));
+        balance.incrementVersion();
+
+        ToXMLServiceImpl.commonToXML(balance, "balance.xml");
+
+        model.addAttribute("newBalance", balance);
+        return "redirect:/balance";
     }
 
     @ResponseBody
@@ -223,6 +238,24 @@ public class AccountController {
         incomeReport.incrementVersion();
 
         this.incomeReportService.insert(incomeReport);
+
+        model.addAttribute("newIncomeReport", incomeReport);
+        return "redirect:/income_report";
+    }
+
+    @PostMapping("/income_report/to_xml")
+    public String incomeReportToXml(IncomeReport incomeReport, Model model) {
+
+        Calendar calendar = Calendar.getInstance();
+
+        incomeReport.setCreated(calendar.getTime());
+        incomeReport.setYear(String.valueOf(calendar.get(Calendar.YEAR)));
+        incomeReport.setPeriod(LocalDate
+                .of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+                .get(IsoFields.QUARTER_OF_YEAR));
+        incomeReport.incrementVersion();
+
+        ToXMLServiceImpl.commonToXML(incomeReport, "income_report.xml");
 
         model.addAttribute("newIncomeReport", incomeReport);
         return "redirect:/income_report";

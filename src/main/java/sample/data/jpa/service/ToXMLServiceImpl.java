@@ -11,8 +11,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-
-
 public class ToXMLServiceImpl {
 
     private ToXMLServiceImpl() {
@@ -34,8 +32,10 @@ public class ToXMLServiceImpl {
                 context = JAXBContext.newInstance(IncomeReport.class);
             } else throw new ClassCastException();
 
+
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
 
             m.marshal(toXML, new File(fileName));
 
@@ -46,16 +46,20 @@ public class ToXMLServiceImpl {
 
 
     public static Balance jaxbXMLToObjectBalance(String fileName) {
-        XmlValidate.validateXmlByXsd(FormType.BALANCE, FILE_NAME_BALANCE);
         if (fileName.isEmpty())
             fileName = FILE_NAME_BALANCE;
-        try {
-            JAXBContext context = JAXBContext.newInstance(Balance.class);
-            Unmarshaller un = context.createUnmarshaller();
+        if (XmlValidate.validateXmlByXsd(FormType.BALANCE, fileName)) {
+            if (fileName.isEmpty())
+                fileName = FILE_NAME_BALANCE;
+            try {
+                JAXBContext context = JAXBContext.newInstance(Balance.class);
+                Unmarshaller un = context.createUnmarshaller();
 
-            return (Balance) un.unmarshal(new File(fileName));
-        } catch (JAXBException e) {
-            e.printStackTrace();
+
+                return (Balance) un.unmarshal(new File(fileName));
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -63,13 +67,17 @@ public class ToXMLServiceImpl {
     public static IncomeReport jaxbXMLToObjectIM(String fileName) {
         if (fileName.isEmpty())
             fileName = FILE_NAME_IR;
-        try {
-            JAXBContext context = JAXBContext.newInstance(IncomeReport.class);
-            Unmarshaller un = context.createUnmarshaller();
+        if (XmlValidate.validateXmlByXsd(FormType.INCOME_REPORT, fileName)) {
+            if (fileName.isEmpty())
+                fileName = FILE_NAME_IR;
+            try {
+                JAXBContext context = JAXBContext.newInstance(IncomeReport.class);
+                Unmarshaller un = context.createUnmarshaller();
 
-            return (IncomeReport) un.unmarshal(new File(fileName));
-        } catch (JAXBException e) {
-            e.printStackTrace();
+                return (IncomeReport) un.unmarshal(new File(fileName));
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
