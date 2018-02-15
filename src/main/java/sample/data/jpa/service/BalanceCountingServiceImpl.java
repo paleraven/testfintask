@@ -58,7 +58,7 @@ public class BalanceCountingServiceImpl implements BalanceCountingService {
         balance.setRow1700(result);
     }
 
-    public void ruleSumof1600_1700() throws IncorrectDataException {
+    public void ruleSumof1600or1700() throws IncorrectDataException {
         if (!Utils.notNull(balance.getRow1600()).equals(Utils.notNull(balance.getRow1700())))
             throw new IncorrectDataException(message);
     }
