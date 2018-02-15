@@ -1,9 +1,18 @@
 package sample.data.jpa.domain;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@XmlRootElement(name = "Balance")
+@XmlType(propOrder = {"balanceId","account", "version", "status", "period","created", "year",
+"row1100","row1110","row1120","row1130","row1140","row1150","row1160","row1170","row1180",
+"row1190","row1200","row1210","row1220","row1230","row1240","row1250","row1260","row1300",
+"row1310","row1320","row1340","row1350","row1360","row1370","row1400","row1410","row1420",
+"row1430","row1450","row1500","row1510","row1520","row1530","row1540","row1550","row1600",
+"row1700"})
 @Entity
 public class Balance {
 
