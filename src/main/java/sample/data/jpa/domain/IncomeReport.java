@@ -1,7 +1,6 @@
 package sample.data.jpa.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.AssertTrue;
 import java.math.BigDecimal;
 import java.util.Date;
 

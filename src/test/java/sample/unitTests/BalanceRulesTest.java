@@ -1,12 +1,10 @@
 package sample.unitTests;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import sample.data.jpa.CustomException.IncorrectDataException;
 import sample.data.jpa.domain.Balance;
-import sample.data.jpa.domain.IncomeReportRules;
-import sample.data.jpa.service.CountingServiceImpl;
+import sample.data.jpa.service.BalanceCountingServiceImpl;
 
 import java.math.BigDecimal;
 
@@ -15,7 +13,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1100() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1110(null);
         balance.setRow1120(new BigDecimal(12));
         countingService.ruleSumof1100();
@@ -25,7 +23,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1200() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1210(new BigDecimal(14));
         balance.setRow1220(new BigDecimal(12));
         countingService.ruleSumof1200();
@@ -35,7 +33,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1300() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1310(new BigDecimal(14));
         balance.setRow1320(new BigDecimal(12));
         countingService.ruleSumof1300();
@@ -45,7 +43,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1400() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1410(new BigDecimal(14));
         balance.setRow1420(new BigDecimal(12));
         countingService.ruleSumof1400();
@@ -55,7 +53,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1500() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1510(new BigDecimal(14));
         balance.setRow1520(new BigDecimal(12));
         countingService.ruleSumof1500();
@@ -65,7 +63,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1600() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1100(new BigDecimal(14));
         balance.setRow1200(new BigDecimal(12));
         countingService.ruleSumof1600();
@@ -75,7 +73,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1700() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1300(new BigDecimal(14));
         balance.setRow1400(new BigDecimal(12));
         countingService.ruleSumof1700();
@@ -85,7 +83,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleSumof1600_1700() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1600(new BigDecimal(14));
         balance.setRow1700(new BigDecimal(12));
         try {
@@ -98,7 +96,7 @@ public class BalanceRulesTest {
     @Test
     public void ruleMoreThanZero() {
         Balance balance = new Balance();
-        CountingServiceImpl countingService = new CountingServiceImpl(balance);
+        BalanceCountingServiceImpl countingService = new BalanceCountingServiceImpl(balance);
         balance.setRow1110(new BigDecimal(-14));
         try {
             countingService.ruleMoreThanZero();
