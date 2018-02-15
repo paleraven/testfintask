@@ -92,6 +92,112 @@ public class AccountController {
         return map;
     }
 
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1200")
+    public Map<String, ? extends Object> sum1200(@RequestParam String row1210,
+                                                 @RequestParam String row1220,
+                                                 @RequestParam String row1230,
+                                                 @RequestParam String row1240,
+                                                 @RequestParam String row1250,
+                                                 @RequestParam String row1260) {
+        Balance balance = new Balance();
+        balance.setRow1210(new BigDecimal(row1210));
+        balance.setRow1220(new BigDecimal(row1220));
+        balance.setRow1230(new BigDecimal(row1230));
+        balance.setRow1240(new BigDecimal(row1240));
+        balance.setRow1250(new BigDecimal(row1250));
+        balance.setRow1260(new BigDecimal(row1260));
+        this.countingService.setBalance(balance).ruleSumof1200();
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1200", String.valueOf(balance.getRow1200()));
+        return map;
+    }
+
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1300")
+    public Map<String, ? extends Object> sum1300(@RequestParam String row1310,
+                                                 @RequestParam String row1320,
+                                                 @RequestParam String row1340,
+                                                 @RequestParam String row1350,
+                                                 @RequestParam String row1360,
+                                                 @RequestParam String row1370) {
+        Balance balance = new Balance();
+        balance.setRow1310(new BigDecimal(row1310));
+        balance.setRow1320(new BigDecimal(row1320));
+        balance.setRow1340(new BigDecimal(row1340));
+        balance.setRow1350(new BigDecimal(row1350));
+        balance.setRow1360(new BigDecimal(row1360));
+        balance.setRow1370(new BigDecimal(row1370));
+        this.countingService.setBalance(balance).ruleSumof1300();
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1300", String.valueOf(balance.getRow1300()));
+        return map;
+    }
+
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1400")
+    public Map<String, ? extends Object> sum1400(@RequestParam String row1410,
+                                                 @RequestParam String row1420,
+                                                 @RequestParam String row1430,
+                                                 @RequestParam String row1450) {
+        Balance balance = new Balance();
+        balance.setRow1410(new BigDecimal(row1410));
+        balance.setRow1420(new BigDecimal(row1420));
+        balance.setRow1430(new BigDecimal(row1430));
+        balance.setRow1450(new BigDecimal(row1450));
+        this.countingService.setBalance(balance).ruleSumof1400();
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1400", String.valueOf(balance.getRow1400()));
+        return map;
+    }
+
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1500")
+    public Map<String, ? extends Object> sum1500(@RequestParam String row1510,
+                                                 @RequestParam String row1520,
+                                                 @RequestParam String row1530,
+                                                 @RequestParam String row1540,
+                                                 @RequestParam String row1550) {
+        Balance balance = new Balance();
+        balance.setRow1510(new BigDecimal(row1510));
+        balance.setRow1520(new BigDecimal(row1520));
+        balance.setRow1530(new BigDecimal(row1530));
+        balance.setRow1540(new BigDecimal(row1540));
+        balance.setRow1550(new BigDecimal(row1550));
+        this.countingService.setBalance(balance).ruleSumof1500();
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1500", String.valueOf(balance.getRow1500()));
+        return map;
+    }
+
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1600")
+    public Map<String, ? extends Object> sum1600(@RequestParam String row1100,
+                                                 @RequestParam String row1200) {
+        Balance balance = new Balance();
+        balance.setRow1100(new BigDecimal(row1100));
+        balance.setRow1200(new BigDecimal(row1200));
+        this.countingService.setBalance(balance).ruleSumof1600();
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1600", String.valueOf(balance.getRow1600()));
+        return map;
+    }
+
+    @ResponseBody
+    @GetMapping("/balance/calculate/row1700")
+    public Map<String, ? extends Object> sum1700(@RequestParam String row1300,
+                                                 @RequestParam String row1400,
+                                                 @RequestParam String row1500) {
+        Balance balance = new Balance();
+        balance.setRow1300(new BigDecimal(row1300));
+        balance.setRow1400(new BigDecimal(row1400));
+        balance.setRow1500(new BigDecimal(row1500));
+        this.countingService.setBalance(balance).ruleSumof1700();
+        Map<String, String> map = Maps.newHashMap();
+        map.put("row1700", String.valueOf(balance.getRow1700()));
+        return map;
+    }
+
     @PostMapping("/balance")
     public String receiveBalance(Balance balance) {
         return "redirect:/balance";

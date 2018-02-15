@@ -8,16 +8,19 @@
             width: 50%;
             text-align: center;
         }
-        .sum {
+
+        .sum, .sum1, .sum2 {
             width: 25%;
             text-align: center;
             border: 1px solid black;
         }
+
         td {
             text-align: center;
         }
+
         .selectBox {
-            width:50%;
+            width: 50%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -33,6 +36,7 @@
         $(document).ready(function () {
 
             // I.ВНЕОБОРОТНЫЕ АКТИВЫ //
+            var row1100 = 0;
             var o1 = {
                 row1110: 0,
                 row1120: 0,
@@ -44,7 +48,7 @@
                 row1180: 0,
                 row1190: 0
             };
-            $('.f1').on("change", function(){
+            $('.f1').on("change", function () {
                 var tag = $(this);
                 var value = tag.val();
                 var field = tag.attr('id');
@@ -65,14 +69,179 @@
                     },
                     complete: function (data) {
                         var value = JSON.parse(data.responseText);
-                        console.log(value);
                         document.getElementById("row1100").innerHTML = value.row1100;
+                        row1100 = value.row1100;
+                        sum1600();
                     }
                 });
             });
 
-        });
+            // II. ОБОРОТНЫЕ АКТИВЫ //
+            var row1200 = 0;
+            var o2 = {
+                row1210: 0,
+                row1220: 0,
+                row1230: 0,
+                row1240: 0,
+                row1250: 0,
+                row1260: 0
+            };
+            $('.f2').on("change", function () {
+                var tag = $(this);
+                var value = tag.val();
+                var field = tag.attr('id');
+                o2[field] = value;
 
+                $.ajax('/balance/calculate/row1200', {
+                    method: 'get',
+                    data: {
+                        row1210: o2.row1210,
+                        row1220: o2.row1220,
+                        row1230: o2.row1230,
+                        row1240: o2.row1240,
+                        row1250: o2.row1250,
+                        row1260: o2.row1260
+                    },
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        document.getElementById("row1200").innerHTML = value.row1200;
+                        row1200 = value.row1200;
+                        sum1600();
+                    }
+                });
+            });
+
+
+            // БАЛАНС (сумма строк 1100+1200) //
+            function sum1600() {
+                $.ajax('/balance/calculate/row1600', {
+                    method: 'get',
+                    data: {
+                        row1100: row1100,
+                        row1200: row1200
+                    },
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        document.getElementById("row1600").innerHTML = value.row1600;
+                    }
+                });
+            }
+
+            // III. КАПИТАЛ И РЕЗЕРВЫ //
+            var row1300 = 0;
+            var o3 = {
+                row1310: 0,
+                row1320: 0,
+                row1340: 0,
+                row1350: 0,
+                row1360: 0,
+                row1370: 0
+            };
+            $('.f3').on("change", function () {
+                var tag = $(this);
+                var value = tag.val();
+                var field = tag.attr('id');
+                o3[field] = value;
+
+                $.ajax('/balance/calculate/row1300', {
+                    method: 'get',
+                    data: {
+                        row1310: o3.row1310,
+                        row1320: o3.row1320,
+                        row1340: o3.row1340,
+                        row1350: o3.row1350,
+                        row1360: o3.row1360,
+                        row1370: o3.row1370
+                    },
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        document.getElementById("row1300").innerHTML = value.row1300;
+                        row1300 = value.row1300;
+                        sum1700();
+                    }
+                });
+            });
+
+            // IV. ДОЛГОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА //
+            var row1400 = 0;
+            var o4 = {
+                row1410: 0,
+                row1420: 0,
+                row1430: 0,
+                row1450: 0
+            };
+            $('.f4').on("change", function () {
+                var tag = $(this);
+                var value = tag.val();
+                var field = tag.attr('id');
+                o4[field] = value;
+
+                $.ajax('/balance/calculate/row1400', {
+                    method: 'get',
+                    data: {
+                        row1410: o4.row1410,
+                        row1420: o4.row1420,
+                        row1430: o4.row1430,
+                        row1450: o4.row1450
+                    },
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        document.getElementById("row1400").innerHTML = value.row1400;
+                        row1400 = value.row1400;
+                        sum1700();
+                    }
+                });
+            });
+
+            // V. КРАТКОСРОЧНЫЕ ОБЯЗАТЕЛЬСТВА //
+            var row1500 = 0;
+            var o5 = {
+                row1510: 0,
+                row1520: 0,
+                row1540: 0,
+                row1530: 0,
+                row1550: 0
+            };
+            $('.f5').on("change", function () {
+                var tag = $(this);
+                var value = tag.val();
+                var field = tag.attr('id');
+                o5[field] = value;
+
+                $.ajax('/balance/calculate/row1500', {
+                    method: 'get',
+                    data: {
+                        row1510: o5.row1510,
+                        row1520: o5.row1520,
+                        row1530: o5.row1530,
+                        row1540: o5.row1540,
+                        row1550: o5.row1550
+                    },
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        document.getElementById("row1500").innerHTML = value.row1500;
+                        row1500 = value.row1500;
+                        sum1700();
+                    }
+                });
+            });
+
+            // БАЛАНС (сумма строк 1300+1400+1500) //
+            function sum1700() {
+                $.ajax('/balance/calculate/row1700', {
+                    method: 'get',
+                    data: {
+                        row1300: row1300,
+                        row1400: row1400,
+                        row1500: row1500
+                    },
+                    complete: function (data) {
+                        var value = JSON.parse(data.responseText);
+                        document.getElementById("row1700").innerHTML = value.row1700;
+                    }
+                });
+            }
+        });
 
     </script>
 </head>
@@ -160,7 +329,7 @@
 
                 <tr>
                     <td></td>
-                    <td><b>I.ВНЕОБОРОТНЫЕ  АКТИВЫ</b></td>
+                    <td><b>I.ВНЕОБОРОТНЫЕ АКТИВЫ</b></td>
                 </tr>
 
                 <!-- 1100 -->
@@ -194,7 +363,7 @@
                 </tr>
                 <tr>
                     <td>1150</td>
-                    <td>Основные средства </td>
+                    <td>Основные средства</td>
                     <td>
                         <input type="text" class="f1" id="row1150" th:field="*{row1150}"/>
                     </td>
@@ -230,7 +399,7 @@
                 <tr>
                     <td><b>1100</b></td>
                     <td><b>Итого по разделу I</b></td>
-                    <td class="sum" id="row1100" th:field="*{row1100}">
+                    <td class="sum1" id="row1100" th:field="*{row1100}">
                     </td>
                 </tr>
 
@@ -244,48 +413,48 @@
                     <td>1210</td>
                     <td>Запасы</td>
                     <td>
-                        <input type="text" id="row1210" th:field="*{row1210}"/>
+                        <input type="text" class="f2" id="row1210" th:field="*{row1210}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1220</td>
                     <td>Налог на добавленную стоимость по приобретенным ценностям</td>
                     <td>
-                        <input type="text" id="row1220" th:field="*{row1220}"/>
+                        <input type="text" class="f2" id="row1220" th:field="*{row1220}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1230</td>
                     <td>Дебиторская задолженность</td>
                     <td>
-                        <input type="text" id="row1230" th:field="*{row1230}"/>
+                        <input type="text" class="f2" id="row1230" th:field="*{row1230}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1240</td>
                     <td>Финансовые вложения</td>
                     <td>
-                        <input type="text" id="row1240" th:field="*{row1240}"/>
+                        <input type="text" class="f2" id="row1240" th:field="*{row1240}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1250</td>
                     <td>Денежные средства</td>
                     <td>
-                        <input type="text" id="row1250" th:field="*{row1250}"/>
+                        <input type="text" class="f2" id="row1250" th:field="*{row1250}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1260</td>
                     <td>Прочие оборотные активы</td>
                     <td>
-                        <input type="text" id="row1260" th:field="*{row1260}"/>
+                        <input type="text" class="f2" id="row1260" th:field="*{row1260}"/>
                     </td>
                 </tr>
                 <tr>
                     <td><b>1200</b></td>
                     <td><b>Итого по разделу II</b></td>
-                    <td class="sum" id="row1200" th:field="*{row1200}">
+                    <td class="sum1" id="row1200" th:field="*{row1200}">
                     </td>
                 </tr>
 
@@ -307,48 +476,48 @@
                     <td>1310</td>
                     <td>Уставный капитал (складочный капитал, уставный фонд, вклады товарищей)</td>
                     <td>
-                        <input type="text" id="row1310" th:field="*{row1310}"/>
+                        <input type="text" class="f3" id="row1310" th:field="*{row1310}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1320</td>
                     <td>Собственные акции, выкупленные у акционеров</td>
                     <td>
-                        <input type="text" id="row1320" th:field="*{row1320}"/>
+                        <input type="text" class="f3" id="row1320" th:field="*{row1320}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1340</td>
                     <td>Переоценка внеоборотных активов</td>
                     <td>
-                        <input type="text" id="row1340" th:field="*{row1340}"/>
+                        <input type="text" class="f3" id="row1340" th:field="*{row1340}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1350</td>
                     <td>Добавочный капитал (без переоценки)</td>
                     <td>
-                        <input type="text" id="row1350" th:field="*{row1350}"/>
+                        <input type="text" class="f3" id="row1350" th:field="*{row1350}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1360</td>
                     <td>Резервный капитал</td>
                     <td>
-                        <input type="text" id="row1360" th:field="*{row1360}"/>
+                        <input type="text" class="f3" id="row1360" th:field="*{row1360}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1370</td>
                     <td>Нераспределенная прибыль (непокрытый убыток)</td>
                     <td>
-                        <input type="text" id="row1370" th:field="*{row1370}"/>
+                        <input type="text" class="f3" id="row1370" th:field="*{row1370}"/>
                     </td>
                 </tr>
                 <tr>
                     <td><b>1300</b></td>
                     <td><b>Итого по разделу III</b></td>
-                    <td class="sum" id="row1300" th:field="*{row1300}">
+                    <td class="sum2" id="row1300" th:field="*{row1300}">
                     </td>
                 </tr>
 
@@ -362,34 +531,34 @@
                     <td>1410</td>
                     <td>Заемные средства</td>
                     <td>
-                        <input type="text" id="row1410" th:field="*{row1410}"/>
+                        <input type="text" class="f4" id="row1410" th:field="*{row1410}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1420</td>
                     <td>Отложенные налоговые обязательства</td>
                     <td>
-                        <input type="text" id="row1420" th:field="*{row1420}"/>
+                        <input type="text" class="f4" id="row1420" th:field="*{row1420}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1430</td>
                     <td>Резервы под условные обязательства</td>
                     <td>
-                        <input type="text" id="row1430" th:field="*{row1430}"/>
+                        <input type="text" class="f4" id="row1430" th:field="*{row1430}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1450</td>
                     <td>Прочие обязательства</td>
                     <td>
-                        <input type="text" id="row1450" th:field="*{row1450}"/>
+                        <input type="text" class="f4" id="row1450" th:field="*{row1450}"/>
                     </td>
                 </tr>
                 <tr>
                     <td><b>1400</b></td>
                     <td><b>Итого по разделу IV</b></td>
-                    <td class="sum" id="row1400" th:field="*{row1400}">
+                    <td class="sum2" id="row1400" th:field="*{row1400}">
                     </td>
                 </tr>
 
@@ -403,41 +572,41 @@
                     <td>1510</td>
                     <td>Заемные средства</td>
                     <td>
-                        <input type="text" id="row1510" th:field="*{row1510}"/>
+                        <input type="text" class="f5" id="row1510" th:field="*{row1510}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1520</td>
                     <td>Кредиторская задолженность</td>
                     <td>
-                        <input type="text" id="row1520" th:field="*{row1520}"/>
+                        <input type="text" class="f5" id="row1520" th:field="*{row1520}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1530</td>
                     <td>Доходы будущих периодов</td>
                     <td>
-                        <input type="text" id="row1530" th:field="*{row1530}"/>
+                        <input type="text" class="f5" id="row1530" th:field="*{row1530}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1540</td>
                     <td>Резервы предстоящих расходов</td>
                     <td>
-                        <input type="text" id="row1540" th:field="*{row1540}"/>
+                        <input type="text" class="f5" id="row1540" th:field="*{row1540}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>1550</td>
                     <td>Прочие обязательства</td>
                     <td>
-                        <input type="text" id="row1550" th:field="*{row1550}"/>
+                        <input type="text" class="f5" id="row1550" th:field="*{row1550}"/>
                     </td>
                 </tr>
                 <tr>
                     <td><b>1500</b></td>
                     <td><b>Итого по разделу V</b></td>
-                    <td class="sum" id="row1500" th:field="*{row1500}">
+                    <td class="sum2" id="row1500" th:field="*{row1500}">
                     </td>
                 </tr>
 
