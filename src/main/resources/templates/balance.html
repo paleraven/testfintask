@@ -38,7 +38,7 @@
 
     <h2>Бухгалтерский баланс</h2>
     <div>
-        <form class="form-horizontal" th:object="${balance}" th:action="@{/balance}" method="post">
+        <form class="form-horizontal" th:object="${balance}" th:action="@{/balance/insert}" method="post">
 
             <div class="selectBox">
                 <div>Select Account</div>
@@ -69,43 +69,43 @@
                 <!-- id -->
                 <tr>
                     <td>ID баланса</td>
-                    <td class="sum" th:field="*{balanceId}"/>
+                    <td class="sum" id="balanceId" th:field="*{balanceId}"></td>
                 </tr>
 
                 <!-- account -->
                 <tr>
                     <td>ID организации</td>
-                    <td class="sum" th:field="*{account.id}"/>
+                    <td class="sum" id="accountId" th:field="*{account.id}"></td>
                 </tr>
 
                 <!-- created -->
-                <tr>
-                    <td>Дата создания</td>
-                    <td class="sum" th:field="*{created}"/>
-                </tr>
+                <!--<tr>-->
+                    <!--<td>Дата создания</td>-->
+                    <!--<td class="sum" th:field="*{created}"></td>-->
+                <!--</tr>-->
 
                 <!-- version -->
                 <tr>
                     <td>Версия</td>
-                    <td class="sum" th:field="*{version}"/>
+                    <td class="sum" th:field="*{version}"></td>
                 </tr>
 
                 <!-- status -->
-                <tr>
-                    <td>Статус</td>
-                    <td class="sum" th:field="*{status}"/>
-                </tr>
+                <!--<tr>-->
+                    <!--<td>Статус</td>-->
+                    <!--<td class="sum" th:field="*{status}"></td>-->
+                <!--</tr>-->
 
                 <!-- year -->
                 <tr>
                     <td>Год</td>
-                    <td class="sum" th:field="*{year}"/>
+                    <td class="sum" th:field="*{year}"></td>
                 </tr>
 
                 <!-- period -->
                 <tr>
                     <td>Период</td>
-                    <td class="sum" th:field="*{period}"/>
+                    <td class="sum" th:field="*{period}"></td>
                 </tr>
 
                 <tr>
