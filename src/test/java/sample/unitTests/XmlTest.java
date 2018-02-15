@@ -22,14 +22,14 @@ public class XmlTest {
         balance.setRow1300(new BigDecimal(12));
         balance.setRow1700(new BigDecimal(12));
 
-        ToXMLServiceImpl.commonToXML(balance);
+        ToXMLServiceImpl.commonToXML(balance, "");
     }
 
     @Ignore
     @Test
     public void xmlToObjBalance() {
 
-        Balance balance = ToXMLServiceImpl.jaxbXMLToObjectBalance();
+        Balance balance = ToXMLServiceImpl.jaxbXMLToObjectBalance("");
         Assert.assertEquals("Processing",balance.getStatus());
     }
 
@@ -43,13 +43,13 @@ public class XmlTest {
         incomeReport.setRow2110(new BigDecimal(12));
         incomeReport.setRow2210(new BigDecimal(12));
 
-        ToXMLServiceImpl.commonToXML(incomeReport);
+        ToXMLServiceImpl.commonToXML(incomeReport, "");
     }
 
     @Test
     public void xmlToObjIncomeRep() {
 
-        IncomeReport incomeReport = ToXMLServiceImpl.jaxbXMLToObjectIM();
+        IncomeReport incomeReport = ToXMLServiceImpl.jaxbXMLToObjectIM("");
         Assert.assertEquals("Processing",incomeReport.getStatus());
     }
 }
